@@ -26,7 +26,25 @@ def sudoku2(grid):
 
     #Step 3 
     # for each subgrid in sudoku
-    # 
+    
+    for i in range(0, len(grid), 3):
+        for j in range(0, len(grid), 3):
+            subgrid_list=[]
+            for subgrid_row in range(i, i+len(grid)/3):  
+                for subgrid_num in range(j, j+len(grid)/3):
+                    subgrid_list.append(grid[subgrid_row][subgrid_num])
+            #print(subgrid_list)
+            subgrid_dict = {}
+            for blah2 in range(0,len(subgrid_list)): 
+                if subgrid_list[blah2] != ".":
+                    if subgrid_list[blah2] in subgrid_dict:
+                        return False
+                    else:
+                        subgrid_dict[subgrid_list[blah2]] = 1
+            #print(subgrid_dict)
+        return True
+    
+    
 
 def check_columns(grid):
     #for each column in sudoku
@@ -42,5 +60,5 @@ def check_columns(grid):
                     return False
                 else:
                     column_dict[column_list[blah]] = 1
-        print(column_dict)
+        #print(column_dict)
     return True
