@@ -42,7 +42,7 @@ def sudoku2(grid):
                     else:
                         subgrid_dict[subgrid_list[blah2]] = 1
             #print(subgrid_dict)
-        return True
+    return True
     
     
 
